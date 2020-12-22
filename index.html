@@ -330,6 +330,12 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition info">
+<p class="admonition-title">Reading xlsx files</p>
+<p>You might get a <code>XLRDError('Excel xlsx file; not supported',)</code> error on linux systems. That's because <code>xlrd</code> does not support <code>.xlsx</code> files (<a href="https://stackoverflow.com/questions/65254535/xlrd-biffh-xlrderror-excel-xlsx-file-not-supported">stackoverflow post</a>).
+Instead, install <a href="https://openpyxl.readthedocs.io/en/stable/">openpyxl</a> and use:</p>
+<p><code>{{ read_excel('tables/excel_table.xlsx', engine='openpyxl') }}</code></p>
+</div>
 <h2 id="read_fwf">read_fwf</h2>
 <p>The table below was inserted using the <code>{{ read_fwf('tables/fixedwidth_table.txt') }}</code> tag:</p>
 <table>
